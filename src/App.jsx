@@ -1,11 +1,28 @@
+import { useState } from "react";
+
 function App() {
-  const UserName = "NasirMarwat";
+  const [counter, setCounter] = useState(14);
+  const addValue = () => {
+    if (counter < 20) {
+      setCounter(counter + 1);
+    }
+  };
+
+  const removeValue = () => {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
+  };
+
   return (
     <>
-      <a href='https://wa.link/0keeio' target='_blank'>
-        Click to Connect with Muhammad Anwar WhatsApp
-      </a>
-      <h1>{UserName}</h1>
+      <h1>Welcome to Chaye Aor Code</h1>
+      <h2>The value of x: {counter} </h2>
+      <button onClick={addValue}>Add value </button>
+      <br />
+      <br />
+      <br />
+      <button onClick={removeValue}>Remove</button>
     </>
   );
 }
